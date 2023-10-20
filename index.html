@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@400;600&family=Inter:wght@300&family=Lato:wght@400;900&family=Quicksand&family=Raleway:ital,wght@0,300;0,700;1,400&family=Roboto+Condensed:wght@300;400&family=Roboto:wght@100;500;700;900&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Rock, Paper, Scissors game</title>
+  </head>
+  <body>
+    <header class="header">
+      <span class="header__title">ROCK PAPER SCISSORS</span>
+    </header>
+    <main>
+      <div class="score-block">
+      <div class="players1 ">
+        <p class="you playerYou">YOU</p>
+        <p id="scoreYou" class="you playerYou">0</p>
+      </div>
+      <div class="players2 ">
+        <p class="pc playerPc">PC</p>
+        <p id="scorePc" class="pc playerPc">0</p>
+      </div>
+        </div>
+      </div>
+      <div id="triangle" class="triangle">
+        <div class="playStyle rockPlayStyle"><img id="rockIcon" class="paperIcon" src="assets/images/icon-rock.svg" alt="paper icon"></div>
+        <div class="playStyle paperPlayStyle"><img id="paperIcon" class="paperIcon" src="assets/images/icon-paper.svg" alt="paper icon"></div>
+        <div class="playStyle scissorsPlayStyle"><img id="scissorsIcon" class="paperIcon" src="assets/images/icon-scissors.svg" alt="paper icon"></div>
+        <h3 id="textWinner" class="triangle__winnerLoser"></h3>
+      </div>
+<div class="selection-block1">
+   <div class="youPicked">
+  <span id="youPicked"></span>
+</div>
+  <div class="pcPicked"><span id="pcPicked"></span></div>
+</div>
+<div class="selection-block2">
+  <div id="pickedColorYou" class="youPickedColor pickedColor"></div>
+  <div id="pickedColorPc" class="pcPickedColor pickedColor"></div>
+</div>
+    </main>
+    <script src="JS/scripts.js"></script>
+  </body>
+</html>
