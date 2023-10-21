@@ -40,7 +40,8 @@ const pcPlay = (e) => {
   pcSelected === 2 && e.target === paperIconElement ? textWinnerElement.textContent = 'PC WINS' : '';
   e.target === rockIconElement && pcSelected === 2 ? textWinnerElement.textContent = 'YOU WIN' : '';
   e.target === paperIconElement && pcSelected === 0 ? textWinnerElement.textContent = 'YOU WIN' : '';
-  e.target === scissorsIconElement && pcSelected === 0 ? textWinnerElement.textContent = 'YOU WIN' : '';
+  e.target === scissorsIconElement && pcSelected === 0 ? textWinnerElement.textContent = 'PC WIN' : '';
+  e.target === scissorsIconElement && pcSelected === 1 ? textWinnerElement.textContent = 'YOU WIN' : '';
   e.target === rockIconElement && pcSelected === 0 ? textWinnerElement.textContent = 'TRY AGAIN' : '';
   e.target === paperIconElement && pcSelected === 1 ? textWinnerElement.textContent = 'TRY AGAIN' : '';
   e.target === scissorsIconElement && pcSelected === 2 ? textWinnerElement.textContent = 'TRY AGAIN' : '';
