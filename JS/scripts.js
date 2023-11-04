@@ -1,3 +1,4 @@
+const winnerTitleElement = document.getElementById('winnerTitle');
 const triangleElement = document.getElementById('triangle');
 const rockIconElement = document.getElementById('rockIcon');
 const paperIconElement = document.getElementById('paperIcon');
@@ -31,6 +32,8 @@ const pcSelections = [
   }
 ];
 
+
+
 const pcPlay = (e) => {
   const pcSelected = Math.floor(Math.random() * pcSelections.length);
   pcPickedtextElement.textContent = pcSelections[pcSelected].text;
@@ -46,23 +49,68 @@ const pcPlay = (e) => {
   e.target === scissorsIconElement && pcSelected === 2 ? textWinnerElement.textContent = 'TRY AGAIN' : '';
 };
 
+let counterScoreYou = 0;
+let counterScorePC = 0;
 
-triangleElement.addEventListener('click', (e) => {
-  textWinnerElement.classList.add('flash')
+const updatePlayerSelection = (color) => {
+  youPickedtextElement.textContent = 'YOU PICKED';
+  rootStyles.setProperty('--color-you', color);
+};
+
+const handleWinConditions = () => {
+  if (textWinnerElement.textContent === 'PC WINS') {
+    scorePcElement.textContent = ++counterScorePC;
+    if (counterScorePC === 10) {
+      winnerTitleElement.textContent = 'YOU LOSER';
+      setTimeout(() => {
+        counterScoreYou = 0;
+        counterScorePC = 0;
+        scoreYouElement.textContent = 0;
+        scorePcElement.textContent = 0;
+        winnerTitleElement.textContent = '';
+        rootStyles.setProperty('--color-pc', 'transparent');
+        rootStyles.setProperty('--color-you', 'transparent');
+        youPickedtextElement.textContent = '';
+        pcPickedtextElement.textContent = '';
+      }, 3000);
+    }
+  }
+  if (textWinnerElement.textContent === 'YOU WIN') {
+    scoreYouElement.textContent = ++counterScoreYou;
+    if (counterScoreYou === 10) {
+      winnerTitleElement.textContent = 'YOU WIN';
+      setTimeout(() => {
+        counterScoreYou = 0;
+        counterScorePC = 0;
+        scoreYouElement.textContent = 0;
+        scorePcElement.textContent = 0;
+        winnerTitleElement.textContent = '';
+        rootStyles.setProperty('--color-pc', 'transparent');
+        rootStyles.setProperty('--color-you', 'transparent');
+        youPickedtextElement.textContent = '';
+        pcPickedtextElement.textContent = '';
+      }, 3000);
+    }
+  }
+};
+
+const selecTicon = (e) => {
+  textWinnerElement.classList.add('flash');
   if (e.target === rockIconElement) {
-    youPickedtextElement.textContent = 'YOU PICKED'
-    rootStyles.setProperty('--color-you', 'red');
+    updatePlayerSelection('red');
+    pcPlay(e);
+  } else if (e.target === paperIconElement) {
+    updatePlayerSelection('green');
+    pcPlay(e);
+  } else if (e.target === scissorsIconElement) {
+    updatePlayerSelection('yellow');
     pcPlay(e);
   }
-  if (e.target === paperIconElement) {
-    youPickedtextElement.textContent = 'YOU PICKED'
-    rootStyles.setProperty('--color-you', 'green');
-    pcPlay(e);
-  }
-  if (e.target === scissorsIconElement) {
-    youPickedtextElement.textContent = 'YOU PICKED'
-    rootStyles.setProperty('--color-you', 'yellow');
-    pcPlay(e);
-  }
-});
+  handleWinConditions();
+};
 
+
+
+rockIconElement.addEventListener('click', selecTicon);
+paperIconElement.addEventListener('click', selecTicon);
+scissorsIconElement.addEventListener('click', selecTicon);

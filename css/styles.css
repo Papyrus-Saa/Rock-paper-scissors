@@ -1,7 +1,7 @@
 :root {
-  --text-color: rgb(235, 235, 235);
-  --text-color-winner: rgb(235, 235, 235);
-  --bg-color: hsl(235, 96%, 10%);
+  --text-color: rgb(84, 84, 84);
+  --text-color-winner: rgb(91, 91, 91);
+  --bg-color: hsl(0, 0%, 86%);
   --selected-color: hsl(0, 97%, 48%);
   --color-you: transparent;
   --color-pc: transparent;
@@ -33,11 +33,19 @@ body {
 
 .header__title {
   letter-spacing: 2px;
+  font-size: 1.6rem;
+}
+
+.winnerTitle {
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 3rem;
+  color: rgb(26, 26, 26);
 }
 
 .score-block {
   width: 80%;
-  color: var(--bg-color);
+  /* color: var(--bg-color); */
   border-radius: 0.4em;
   margin-right: auto;
   margin-left: auto;
@@ -72,16 +80,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 150px;
-  height: 150px;
+  width: 170px;
+  height: 170px;
   margin-right: auto;
   margin-left: auto;
   position: relative;
   margin-bottom: 70px;
-}
-
-.triangle__winnerLoser {
-  color: var(--text-color);
 }
 
 .paperIcon {
@@ -93,13 +97,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
-  border: 3px solid rgb(219, 219, 219);
-  -webkit-box-shadow: inset 0px 0px 17px 4px rgba(0, 0, 0, 1);
-  -moz-box-shadow: inset 0px 0px 17px 4px rgba(0, 0, 0, 1);
-  box-shadow: inset 0px 0px 17px 4px rgba(0, 0, 0, 1);
+  border: 3px solid rgb(236, 236, 236);
+  -webkit-box-shadow: 2px 2px 2px 1px rgb(172, 172, 172);
+  -moz-box-shadow: 2px 2px 2px 1px rgb(172, 172, 172);
+  box-shadow: 2px 2px 2px 1px rgb(172, 172, 172);
   -webkit-animation-name: pulse;
   animation-name: pulse;
   -webkit-animation-duration: 1s;
@@ -107,6 +111,11 @@ body {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   animation-iteration-count: 3;
+  transition: background-color 0.2s ease;
+}
+
+.playStyle:active {
+  background-color: #505050;
 }
 
 @keyframes pulse {
@@ -162,7 +171,6 @@ body {
   height: 20px;
   display: flex;
   justify-content: space-around;
- 
 }
 .pickedColor {
   width: 15px;
@@ -170,14 +178,90 @@ body {
   border-radius: 50%;
 }
 .youPickedColor {
-  width: 15px;
-  height: 15px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   background-color: var(--color-you);
 }
 .pcPickedColor {
-  width: 15px;
-  height: 15px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   background-color: var(--color-pc);
+}
+
+@media screen and (min-width: 520px) {
+  body {
+    background-color: #ececec;
+  }
+  .score-block {
+    justify-content: space-around;
+  }
+}
+@media screen and (min-width: 768px) {
+  body {
+    background-color: #3d3d3d;
+    color: #ececec;
+  }
+  .header__title {
+    font-size: 2.2rem;
+  }
+  .you,
+  .pc {
+    margin: 5px;
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+  .triangle {
+    width: 220px;
+    height: 220px;
+  }
+
+  .playStyle {
+    width: 75px;
+    height: 75px;
+  }
+  .playStyle {
+    border: 3px solid rgb(39, 39, 39);
+    -webkit-box-shadow: 2px 2px 2px 1px rgb(39, 39, 39);
+    -moz-box-shadow: 2px 2px 2px 1px rgb(39, 39, 39);
+    box-shadow: 2px 2px 2px 1px rgb(39, 39, 39);
+  }
+  .winnerTitle {
+    color: #ececec;
+  }
+  .score-block {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  main {
+    /* border: 1px solid rgb(57, 57, 57); */
+    width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 2em;
+    box-shadow: 0px 0px 3px 1px rgba(87, 87, 87, 0.64);
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(87, 87, 87, 0.64);
+    -moz-box-shadow: 0px 0px 3px 1px rgba(87, 87, 87, 0.64);
+  }
+  .selection-block2 {
+    margin-bottom: 70px;
+  }
+  .paperIcon, .rockIcon, .scissorsIcon {
+    width: 70%;
+  }
+  .paperPlayStyle:hover {
+  background-color: #007706;
+  cursor: pointer;
+}
+.rockPlayStyle:hover {
+  background-color: #af0000;
+  cursor: pointer;
+}
+.scissorsPlayStyle:hover {
+  background-color: #d6c000;
+  cursor: pointer;
+}
 }

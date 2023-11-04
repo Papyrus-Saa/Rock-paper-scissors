@@ -15,34 +15,53 @@
     <header class="header">
       <span class="header__title">ROCK PAPER SCISSORS</span>
     </header>
+    <h1 id="winnerTitle" class="winnerTitle"></h1>
     <main>
       <div class="score-block">
-      <div class="players1 ">
-        <p class="you playerYou">YOU</p>
-        <p id="scoreYou" class="you playerYou">0</p>
-      </div>
-      <div class="players2 ">
-        <p class="pc playerPc">PC</p>
-        <p id="scorePc" class="pc playerPc">0</p>
-      </div>
+        <div class="players1">
+          <p class="you playerYou">YOU</p>
+          <p id="scoreYou" class="you playerYou">0</p>
+        </div>
+        <div class="players2">
+          <p class="pc playerPc">PC</p>
+          <p id="scorePc" class="pc playerPc">0</p>
         </div>
       </div>
+
       <div id="triangle" class="triangle">
-        <div class="playStyle rockPlayStyle"><img id="rockIcon" class="paperIcon" src="assets/images/icon-rock.svg" alt="paper icon"></div>
-        <div class="playStyle paperPlayStyle"><img id="paperIcon" class="paperIcon" src="assets/images/icon-paper.svg" alt="paper icon"></div>
-        <div class="playStyle scissorsPlayStyle"><img id="scissorsIcon" class="paperIcon" src="assets/images/icon-scissors.svg" alt="paper icon"></div>
+        <div class="playStyle rockPlayStyle">
+          <img
+            id="rockIcon"
+            class="paperIcon"
+            src="assets/images/icon-rock.svg"
+            alt="paper icon" />
+        </div>
+        <div class="playStyle paperPlayStyle">
+          <img
+            id="paperIcon"
+            class="paperIcon"
+            src="assets/images/icon-paper.svg"
+            alt="paper icon" />
+        </div>
+        <div class="playStyle scissorsPlayStyle">
+          <img
+            id="scissorsIcon"
+            class="paperIcon"
+            src="assets/images/icon-scissors.svg"
+            alt="paper icon" />
+        </div>
         <h3 id="textWinner" class="triangle__winnerLoser"></h3>
       </div>
-<div class="selection-block1">
-   <div class="youPicked">
-  <span id="youPicked"></span>
-</div>
-  <div class="pcPicked"><span id="pcPicked"></span></div>
-</div>
-<div class="selection-block2">
-  <div id="pickedColorYou" class="youPickedColor pickedColor"></div>
-  <div id="pickedColorPc" class="pcPickedColor pickedColor"></div>
-</div>
+      <div class="selection-block1">
+        <div class="youPicked">
+          <span id="youPicked"></span>
+        </div>
+        <div class="pcPicked"><span id="pcPicked"></span></div>
+      </div>
+      <div class="selection-block2">
+        <div id="pickedColorYou" class="youPickedColor pickedColor"></div>
+        <div id="pickedColorPc" class="pcPickedColor pickedColor"></div>
+      </div>
     </main>
     <script src="JS/scripts.js"></script>
   </body>
